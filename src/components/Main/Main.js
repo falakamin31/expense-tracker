@@ -2,6 +2,7 @@
 import React from 'react'
 import { Card,CardContent, CardHeader,Typography ,Grid,Divider} from '@material-ui/core'
 import useStyles from './style';
+import Form from './Form/Form';
 
 const Main = () => {
     const classes = useStyles();
@@ -9,7 +10,7 @@ const Main = () => {
        <Card classname={classes.root}>
            <CardHeader title="Expense Tracker" subheader="Powered by speechely"/>
            <CardContent>
-               <Typography align="center" variant="h5"Total balance $500></Typography>
+               <Typography align="center" variant="h5">Total balance $500</Typography>
 
                <Typography variant="subtitle1" style={{ lineHeight:"1.5em", marginTop:"20px"}}>
                    {/*Info Card */}
@@ -17,7 +18,7 @@ const Main = () => {
                     </Typography>
 
                     <Divider/>
-                    {/*form */}
+                    <Form/>
 
            </CardContent>
            <CardContent classname={classes.cardContent}>
