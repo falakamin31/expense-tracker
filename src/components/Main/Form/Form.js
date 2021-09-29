@@ -1,9 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React, { useState,useContext } from 'react'
 import { TextField,Typography, Grid, Button, FormControl, InputLabel, Select, MenuItem  } from  '@material-ui/core'
 import useStyles from "./style";
 import { ExpenseTrackerContext } from '../../../context/context';
 
 import {v4 as uuidv4} from "uuid";
+import { incomeCategories, expenseCategories } from '../../../constants/categories';
+
 
 
 const initialState ={
@@ -23,7 +27,9 @@ const Form = () => {
         addTransaction(transaction);
         setFormData(initialState);
 
+
     }
+    const selectedCategories = formData.type === 'Income' ? incomeCategories : expenseCategories;
 
     return (
             <Grid container spacing={2}> 
@@ -45,10 +51,9 @@ const Form = () => {
                 <Grid item xs={6}>
                     <FormControl fullWidth>
                         <InputLabel>Category</InputLabel>
-                        <Select value={formData.category} onChange={(e)=> setFormData({ ...formData, category :e.target.value})}>
-                            <MenuItem value="business">Business</MenuItem>
-                            <MenuItem value="salary">Salary</MenuItem>
-                        </Select>
+                        <Select value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })}>
+                            {selectedCategories.map((c) => <MenuItem key={c.type} value={c.type}>{c.type}</MenuItem>)}
+          </Select>
                     </FormControl>
                 </Grid>
                 <Grid item xs={6}>
