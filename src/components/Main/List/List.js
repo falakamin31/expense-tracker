@@ -1,27 +1,31 @@
-import React from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useContext } from 'react'
 import {List as MUIList, ListItem, ListItemAvatar,ListItemText, Avatar, ListItemSecondaryAction, IconButton, Slide} from "@material-ui/core"
 import {Delete,MoneyOff} from "@material-ui/icons"
 import useStyles from "./style";
 
+import { ExpenseTrackerContext } from '../../../context/context';
+
 const List = () => {
     const classes =useStyles();
+    const {deleteTransaction} = useContext(ExpenseTrackerContext);
 
     const transactions =[
         {
-            id:1, type :"Income",category:"Salary",amount:50 ,date:"Monday 21 2021"
+            id:1, type :"Income",category:"Salary",amount:50 ,date: new Date()
         },
         {
-            id:1, type :"Expense",category:"Pets",amount:520 ,date:"Wed 23 2021"
+            id:1, type :"Expense",category:"Pets",amount:520 ,date: new Date()
         },
         {
-            id:1, type :"Income",category:"Business",amount:550 ,date:"Thursday 2 2021"
+            id:1, type :"Income",category:"Business",amount:550 ,date: new Date()
         },
     
         {
-            id:1, type :"Expense",category:"Pets",amount:520 ,date:"Wed 23 2021"
+            id:1, type :"Expense",category:"Pets",amount:520 ,date: new Date()
         },
         {
-            id:1, type :"Income",category:"Business",amount:550 ,date:"Thursday 2 2021"
+            id:1, type :"Income",category:"Business",amount:550 ,date: new Date()
         }
     ]
     return (
