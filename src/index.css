@@ -2,8 +2,8 @@
 #root,body {
     height: 100%;
     margin: 0;
-    background-color: #f3f7f7;
-}
+    background: linear-gradient(to right, rgb(131, 96, 195), rgb(46, 191, 145));
+  }
 html {
   scroll-behavior: smooth;
 }

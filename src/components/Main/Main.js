@@ -21,7 +21,7 @@ const Main = () => {
                    
                     </Typography>
 
-                    <Divider/>
+                    <Divider className={classes.divider}/>
                     <Form/>
 
            </CardContent>
