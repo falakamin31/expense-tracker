@@ -32,5 +32,6 @@ export const useTransactions = (title) => {
     }
 
     return { total, chartData };
+    
 
 }
